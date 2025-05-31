@@ -1,0 +1,89 @@
+{
+  "name": "g-recognizer",
+  "version": "0.1.0",
+  "description": "g-recognizer is a lightweight JavaScript gesture recognition library that supports tap, double-tap, long-press, and swipe gestures.",
+  "main": "./dist/g-recognizer.cjs",
+  "module": "./dist/g-recognizer.js",
+  "types": "./dist/g-recognizer.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/g-recognizer.d.ts",
+      "import": "./dist/g-recognizer.js",
+      "require": "./dist/g-recognizer.cjs"
+    },
+    "./legacy": {
+      "types": "./dist/legacy/g-recognizer.d.ts",
+      "import": "./dist/legacy/g-recognizer.js",
+      "require": "./dist/legacy/g-recognizer.cjs"
+    }
+  },
+  "type": "module",
+  "scripts": {
+    "build": "npm run build:modern && npm run build:legacy",
+    "build:modern": "tsc && vite build --config vite.config.ts",
+    "build:legacy": "tsc && vite build --config vite.config.legacy.ts",
+    "coverage": "vitest run --coverage",
+    "dev": "vite --host",
+    "format": "prettier --write .",
+    "lint": "eslint . --fix",
+    "prepare": "husky install",
+    "preview": "vite preview",
+    "test": "vitest run src",
+    "test:dev": "vitest dev src",
+    "ui": "vitest --ui"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dafengzhen/g-recognizer.git"
+  },
+  "homepage": "https://github.com/dafengzhen/g-recognizer#readme",
+  "bugs": {
+    "url": "https://github.com/dafengzhen/g-recognizer/issues"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.27.2",
+    "@babel/core": "^7.27.4",
+    "@babel/preset-env": "^7.27.2",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@commitlint/prompt-cli": "^19.8.1",
+    "@eslint/js": "^9.28.0",
+    "@types/babel__core": "^7.20.5",
+    "@vitest/coverage-v8": "^3.1.4",
+    "@vitest/ui": "^3.1.4",
+    "core-js": "^3.42.0",
+    "eslint": "^9.28.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-perfectionist": "^4.13.0",
+    "globals": "^16.2.0",
+    "husky": "^9.1.7",
+    "jsdom": "^26.1.0",
+    "prettier": "^3.5.3",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.33.0",
+    "vite": "^6.3.5",
+    "vite-plugin-dts": "^4.5.4",
+    "vitest": "^3.1.4"
+  },
+  "engines": {
+    "node": ">=22",
+    "npm": ">=10"
+  },
+  "keywords": [
+    "g-recognizer",
+    "tool",
+    "biz"
+  ],
+  "author": "dafengzhen",
+  "license": "MIT",
+  "lint-staged": {
+    "**/*": [
+      "npm run format",
+      "npm run lint",
+      "npm run test"
+    ]
+  }
+}

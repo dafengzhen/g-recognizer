@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GestureRecognizer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>
+        <i class="fas fa-hand-point-up"></i>
+        <span>GestureRecognizer Demo</span>
+      </h1>
+      <div class="subtitle">
+        Simple gesture recognition based on the GestureRecognizer library, supporting tap, double-tap, long-press, and
+        four-direction swipe detection
+      </div>
+
+      <div class="feature-list">
+        <div class="feature-item">
+          <i class="fas fa-mobile-alt"></i>
+          <span>Responsive Design</span>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-paint-brush"></i>
+          <span>Visual Feedback</span>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-chart-bar"></i>
+          <span>Real-time Stats</span>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-scroll"></i>
+          <span>Interaction Log</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="instructions">
+      <h2><i class="fas fa-info-circle"></i> Instructions</h2>
+      <p>
+        Use your mouse, touchscreen, or stylus to perform gestures in the interactive area below. The system will
+        recognize them in real-time and display statistics.
+      </p>
+
+      <div class="instruction-grid">
+        <div class="instruction-item">
+          <i class="fas fa-mouse-pointer" style="color: var(--tap)"></i>
+          <div>Tap</div>
+          <small>Single click/touch</small>
+        </div>
+        <div class="instruction-item">
+          <i class="fas fa-mouse" style="color: var(--double-tap)"></i>
+          <div>Double Tap</div>
+          <small>Two quick consecutive taps</small>
+        </div>
+        <div class="instruction-item">
+          <i class="fas fa-hourglass-half" style="color: var(--long-press)"></i>
+          <div>Long Press</div>
+          <small>Hold for over 1 second</small>
+        </div>
+        <div class="instruction-item">
+          <i class="fas fa-arrows-alt-h" style="color: var(--swipe-right)"></i>
+          <div>Swipe</div>
+          <small>All four directions supported</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Tap Gesture Demo -->
+      <div class="demo-section">
+        <div class="panel">
+          <h2><i class="fas fa-hand-pointer"></i> Tap Gesture Demo</h2>
+          <div class="interaction-area">
+            <div class="touch-area" id="tapArea">
+              <div class="prompt">Click/touch in this area<br />(Supports tap, double-tap, and long press)</div>
+              <div class="gesture-count">
+                <i class="fas fa-tap"></i>
+                <span>Tap Count: <span id="tapCount">0</span></span>
+              </div>
+            </div>
+
+            <div class="stats-container">
+              <div class="stat-group">
+                <h3><i class="fas fa-chart-pie"></i> Gesture Statistics</h3>
+                <div class="stat-row">
+                  <span class="stat-label"><i class="fas fa-hand-point-up"></i> Total Taps:</span>
+                  <span class="stat-value" id="totalTaps">0</span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-label"><i class="fas fa-mouse"></i> Double Taps:</span>
+                  <span class="stat-value" id="totalDoubleTaps">0</span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-label"><i class="fas fa-hourglass-half"></i> Long Presses:</span>
+                  <span class="stat-value" id="totalLongPresses">0</span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-label"><i class="fas fa-map-marker-alt"></i> Last Position:</span>
+                  <span class="stat-value" id="lastTapPos">(0, 0)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="gesture-logs" id="tapLogs">
+              <!-- Logs will be dynamically added -->
+            </div>
+
+            <div class="controls">
+              <button id="btnResetTap">
+                <i class="fas fa-redo"></i>
+                <span>Reset Counter</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Swipe Gesture Demo -->
+      <div class="demo-section">
+        <div class="panel">
+          <h2><i class="fas fa-arrows-alt"></i> Swipe Gesture Demo</h2>
+          <div class="interaction-area">
+            <div class="touch-area" id="swipeArea">
+              <div class="prompt">Swipe in this area<br />(Up, Down, Left, Right)</div>
+            </div>
+
+            <div class="stats-container">
+              <div class="stat-group">
+                <h3><i class="fas fa-chart-line"></i> Swipe Statistics</h3>
+                <div class="stat-row">
+                  <span class="stat-label"><i class="fas fa-arrows-alt-h"></i> Total Swipes:</span>
+                  <span class="stat-value" id="totalSwipes">0</span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-label"><i class="fas fa-compass"></i> Last Direction:</span>
+                  <span class="stat-value" id="swipeDirection">-</span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-label"><i class="fas fa-ruler"></i> Avg. Distance:</span>
+                  <span class="stat-value" id="avgSwipeDistance">0px</span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-label"><i class="fas fa-tachometer-alt"></i> Avg. Speed:</span>
+                  <span class="stat-value" id="avgSwipeSpeed">0px/ms</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="gesture-logs" id="swipeLogs">
+              <!-- Logs will be dynamically added -->
+            </div>
+
+            <div class="controls">
+              <button id="btnResetSwipe">
+                <i class="fas fa-redo"></i>
+                <span>Reset Traces</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Powered by GestureRecognizer | Supports mouse, stylus, and touchscreen interactions</p>
+      <p class="">Try the gesture recognition on different devices!</p>
+    </footer>
+
+    <script type="module" src="src/main.ts"></script>
+  </body>
+</html>
