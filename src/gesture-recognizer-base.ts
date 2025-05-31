@@ -1,7 +1,7 @@
 import type { PointerManager } from './pointer-manager.ts';
 import type { GestureEventType, GestureRecognizerOptions, SwipeDirection } from './types.ts';
 
-const DEFAULT_OPTIONS: Required<GestureRecognizerOptions> = {
+export const DEFAULT_OPTIONS: Required<GestureRecognizerOptions> = {
   captureEvents: false,
   doubleTapMaxDelay: 250,
   enablePressure: false,
@@ -18,7 +18,7 @@ const DEFAULT_OPTIONS: Required<GestureRecognizerOptions> = {
   tapMaxDuration: 200,
 };
 
-const RAD_TO_DEG = 180 / Math.PI;
+export const RAD_TO_DEG = 180 / Math.PI;
 
 export abstract class GestureRecognizerBase {
   protected readonly element: HTMLElement;
