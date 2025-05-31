@@ -3,8 +3,8 @@
 [![GitHub License](https://img.shields.io/github/license/dafengzhen/gesture-recognizer?color=blue)](https://github.com/dafengzhen/evflow)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/dafengzhen/gesture-recognizer/pulls)
 
-**g-recognizer** is a lightweight JavaScript gesture recognition library that supports tap, double-tap, long-press,
-and swipe gestures.
+**g-recognizer** is a simple JavaScript gesture recognition library that supports tap, double-tap, long-press, and swipe
+gestures.
 
 [简体中文](./README.zh.md)
 

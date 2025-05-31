@@ -1,7 +1,7 @@
 {
   "name": "g-recognizer",
   "version": "0.1.0",
-  "description": "g-recognizer is a lightweight JavaScript gesture recognition library that supports tap, double-tap, long-press, and swipe gestures.",
+  "description": "g-recognizer is a simple JavaScript gesture recognition library that supports tap, double-tap, long-press, and swipe gestures.",
   "main": "./dist/g-recognizer.cjs",
   "module": "./dist/g-recognizer.js",
   "types": "./dist/g-recognizer.d.ts",
