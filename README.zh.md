@@ -10,7 +10,7 @@
 ## 安装
 
 ```bash
-npm install gesture-recognizer
+npm install g-recognizer
 ```
 
 ## 快速示例
