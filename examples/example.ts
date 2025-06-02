@@ -1,4 +1,4 @@
-import { GestureRecognizer } from './gesture-recognizer.ts';
+import { GestureRecognizer } from '../src/gesture-recognizer';
 
 document.addEventListener('DOMContentLoaded', () => {
   const elements = {

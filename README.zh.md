@@ -1,6 +1,6 @@
 # g-recognizer
 
-[![GitHub License](https://img.shields.io/github/license/dafengzhen/g-recognizer?color=blue)](https://github.com/dafengzhen/evflow)
+[![GitHub License](https://img.shields.io/github/license/dafengzhen/g-recognizer?color=blue)](https://github.com/dafengzhen/g-recognizer)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/dafengzhen/g-recognizer/pulls)
 
 **g-recognizer** 是一个简单的 JavaScript 手势识别库，它提供了对点击、双击、长按和滑动手势的支持
